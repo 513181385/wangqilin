@@ -1,0 +1,33 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login Demo</title>
+</head>
+<body>
+  <h2>Login Page</h2>
+  <form onsubmit="return login()">
+    <input type="text" id="username" placeholder="Username" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button type="submit">Login</button>
+  </form>
+  <p id="message"></p>
+
+  <script>
+    function login() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      const msg = document.getElementById('message');
+      if (user === 'student' && pass === '123456') {
+        msg.textContent = 'Login successful!';
+        msg.style.color = 'green';
+      } else {
+        msg.textContent = 'Invalid login';
+        msg.style.color = 'red';
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>
